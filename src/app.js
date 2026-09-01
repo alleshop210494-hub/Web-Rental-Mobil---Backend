@@ -37,3 +37,9 @@ app.use((err, req, res, next) => {
 });
 
 module.exports = app;
+
+// Tambahkan baris import rute booking di bagian atas app.js
+const bookingRoutes = require('./routes/booking.routes');
+
+// Daftarkan rute di bawah mounting API yang lain
+app.use('/api/bookings', bookingRoutes);
